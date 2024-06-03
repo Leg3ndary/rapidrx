@@ -18,19 +18,25 @@ export default {
 
 		const AUTH_HEADER = request.headers.get("X-Custom-Auth");
 		if (!AUTH_HEADER || AUTH_HEADER !== env.AUTH_KEY) {
-			return Response.json({ status: 403, message: "Forbidden" }, {
-				status: 403,
-				headers: corsHeaders,
-			});
+			return Response.json(
+				{ status: 403, message: "Forbidden" },
+				{
+					status: 403,
+					headers: corsHeaders,
+				},
+			);
 		}
 
 		const url = new URL(request.url);
 		const param = url.searchParams.get("diagnosis");
 		if (!param) {
-			return Response.json({ status: 400, message: "Bad Request" }, {
-				status: 400,
-				headers: corsHeaders,
-			});
+			return Response.json(
+				{ status: 400, message: "Bad Request" },
+				{
+					status: 400,
+					headers: corsHeaders,
+				},
+			);
 		}
 
 		try {
@@ -55,17 +61,23 @@ export default {
 					headers: corsHeaders,
 				});
 			} else {
-				return Response.json({ status: 500, message: "No response from OpenAI" }, {
-					status: 500,
-					headers: corsHeaders,
-				});
+				return Response.json(
+					{ status: 500, message: "No response from OpenAI" },
+					{
+						status: 500,
+						headers: corsHeaders,
+					},
+				);
 			}
 		} catch (error) {
 			console.error("Error:", error);
-			return Response.json({ status: 500, message: "Internal Server Error" }, {
-				status: 500,
-				headers: corsHeaders,
-			});
+			return Response.json(
+				{ status: 500, message: "Internal Server Error" },
+				{
+					status: 500,
+					headers: corsHeaders,
+				},
+			);
 		}
 	},
 };
