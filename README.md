@@ -4,4 +4,4 @@ This is a worker for the RapidRx project. It is responsible for processing data 
 
 This project uses cloudflare workers and the OpenAI API to run and parse/format data into a readable and usable format.
 
-It occasionally fails for reasons unknown to me but I'm working to fix it.
+It occasionally fails for reasons unknown to me but I'm working to fix it (probably because of bad prompting).
