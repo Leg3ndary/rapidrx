@@ -8,7 +8,7 @@ This project uses cloudflare workers and the OpenAI API to run and parse/format 
 
 Clone the repository and run `npm install` to install the dependencies.
 
-Add the OPEN_API_KEY and AUTH_KEY to the .dev.vars file:
+Add the OPEN_API_KEY and AUTH_KEY to the .dev.vars file and set them accordingly using wrangler.
 
 ```env
 OPEN_API_KEY="your_open_api_key"
